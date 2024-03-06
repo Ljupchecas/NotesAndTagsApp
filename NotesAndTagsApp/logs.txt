@@ -1,0 +1,105 @@
+2023-09-18 16:55:24.261 +02:00 [INF] User profile is available. Using 'C:\Users\Ljupce\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-18 16:55:24.859 +02:00 [INF] Now listening on: http://localhost:5002
+2023-09-18 16:55:24.862 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-18 16:55:24.863 +02:00 [INF] Hosting environment: Development
+2023-09-18 16:55:24.863 +02:00 [INF] Content root path: C:\Users\Ljupce\Desktop\Akademija SEDC\Projects\Projects\Back-End\ASP.NET Core Web API\NotesAndTagsApp\NotesAndTagsApp\
+2023-09-18 16:55:26.050 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - -
+2023-09-18 16:55:26.884 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - -
+2023-09-18 16:55:26.887 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - -
+2023-09-18 16:55:26.903 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - - - 200 12362 application/javascript;+charset=utf-8 18.6881ms
+2023-09-18 16:55:26.912 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - - - 200 - text/html;charset=utf-8 870.5749ms
+2023-09-18 16:55:27.044 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 160.9473ms
+2023-09-18 16:55:27.174 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - -
+2023-09-18 16:55:27.528 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 353.9991ms
+2023-09-18 16:56:18.448 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/User/register application/json 138
+2023-09-18 16:56:18.694 +02:00 [INF] Executing endpoint 'NotesAndTagsApp.Controllers.UserController.Register (NotesAndTagsApp)'
+2023-09-18 16:56:18.731 +02:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(NotesAndTagsApp.DTOs.RegisterUserDto) on controller NotesAndTagsApp.Controllers.UserController (NotesAndTagsApp).
+2023-09-18 16:56:19.255 +02:00 [INF] Registration model info: FirstName: Ivona, LastName Gjogjrievska, UserName: IvonaG
+2023-09-18 16:56:23.196 +02:00 [INF] Executed DbCommand (126ms) [Parameters=[@__ToLower_0='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Firstname], [u].[Lastname], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2023-09-18 16:56:23.514 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (Size = 4000), @p3='?' (Size = 30)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Firstname], [Lastname], [Password], [Username])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-09-18 16:56:23.575 +02:00 [INF] Successfully registered IvonaG
+2023-09-18 16:56:23.584 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-09-18 16:56:23.591 +02:00 [INF] Executed action NotesAndTagsApp.Controllers.UserController.Register (NotesAndTagsApp) in 4852.6656ms
+2023-09-18 16:56:23.593 +02:00 [INF] Executed endpoint 'NotesAndTagsApp.Controllers.UserController.Register (NotesAndTagsApp)'
+2023-09-18 16:56:23.626 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/User/register application/json 138 - 201 - text/plain;+charset=utf-8 5178.6205ms
+2023-09-18 16:56:41.469 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/User/login application/json 52
+2023-09-18 16:56:41.475 +02:00 [INF] Executing endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 16:56:41.518 +02:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(NotesAndTagsApp.DTOs.LoginDto) on controller NotesAndTagsApp.Controllers.UserController (NotesAndTagsApp).
+2023-09-18 16:56:41.579 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Firstname], [u].[Lastname], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0 AND [u].[Password] = @__hashedPassword_1
+2023-09-18 16:56:41.958 +02:00 [INF] Successfully login IvonaG
+2023-09-18 16:56:41.958 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-18 16:56:41.959 +02:00 [INF] Executed action NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp) in 439.9613ms
+2023-09-18 16:56:41.959 +02:00 [INF] Executed endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 16:56:41.959 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/User/login application/json 52 - 200 - text/plain;+charset=utf-8 489.5008ms
+2023-09-18 16:58:57.358 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/User/login application/json 52
+2023-09-18 16:58:57.361 +02:00 [INF] Executing endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 16:58:57.361 +02:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(NotesAndTagsApp.DTOs.LoginDto) on controller NotesAndTagsApp.Controllers.UserController (NotesAndTagsApp).
+2023-09-18 16:58:57.450 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Firstname], [u].[Lastname], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0 AND [u].[Password] = @__hashedPassword_1
+2023-09-18 16:58:57.526 +02:00 [ERR] Internal exception: User not found!
+2023-09-18 16:58:57.527 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-09-18 16:58:57.527 +02:00 [INF] Executed action NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp) in 165.719ms
+2023-09-18 16:58:57.527 +02:00 [INF] Executed endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 16:58:57.527 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/User/login application/json 52 - 500 - text/plain;+charset=utf-8 171.0110ms
+2023-09-18 16:59:12.414 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/User/login application/json 55
+2023-09-18 16:59:12.414 +02:00 [INF] Executing endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 16:59:12.414 +02:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(NotesAndTagsApp.DTOs.LoginDto) on controller NotesAndTagsApp.Controllers.UserController (NotesAndTagsApp).
+2023-09-18 16:59:12.423 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Firstname], [u].[Lastname], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0 AND [u].[Password] = @__hashedPassword_1
+2023-09-18 16:59:12.424 +02:00 [INF] Successfully login IvonaG
+2023-09-18 16:59:12.424 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-18 16:59:12.424 +02:00 [INF] Executed action NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp) in 10.425ms
+2023-09-18 16:59:12.424 +02:00 [INF] Executed endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 16:59:12.425 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/User/login application/json 55 - 200 - text/plain;+charset=utf-8 11.1768ms
+2023-09-18 17:00:44.857 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/User/login application/json 52
+2023-09-18 17:00:44.860 +02:00 [INF] Executing endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 17:00:44.861 +02:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(NotesAndTagsApp.DTOs.LoginDto) on controller NotesAndTagsApp.Controllers.UserController (NotesAndTagsApp).
+2023-09-18 17:00:44.876 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Firstname], [u].[Lastname], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0 AND [u].[Password] = @__hashedPassword_1
+2023-09-18 17:00:44.902 +02:00 [ERR] Internal exception: User not found!
+2023-09-18 17:00:44.902 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-09-18 17:00:44.903 +02:00 [INF] Executed action NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp) in 38.3192ms
+2023-09-18 17:00:44.903 +02:00 [INF] Executed endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 17:00:44.903 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/User/login application/json 52 - 500 - text/plain;+charset=utf-8 46.1543ms
+2023-09-18 17:04:05.995 +02:00 [INF] User profile is available. Using 'C:\Users\Ljupce\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-18 17:04:06.152 +02:00 [INF] Now listening on: http://localhost:5002
+2023-09-18 17:04:06.157 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-18 17:04:06.157 +02:00 [INF] Hosting environment: Development
+2023-09-18 17:04:06.157 +02:00 [INF] Content root path: C:\Users\Ljupce\Desktop\Akademija SEDC\Projects\Projects\Back-End\ASP.NET Core Web API\NotesAndTagsApp\NotesAndTagsApp\
+2023-09-18 17:04:07.319 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/index.html - -
+2023-09-18 17:04:07.830 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - -
+2023-09-18 17:04:07.831 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/_vs/browserLink - -
+2023-09-18 17:04:07.843 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_framework/aspnetcore-browser-refresh.js - - - 200 12362 application/javascript;+charset=utf-8 6.7136ms
+2023-09-18 17:04:07.860 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/index.html - - - 200 - text/html;charset=utf-8 551.9371ms
+2023-09-18 17:04:07.879 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 47.2651ms
+2023-09-18 17:04:08.052 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - -
+2023-09-18 17:04:08.328 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 275.9850ms
+2023-09-18 17:04:17.780 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5002/api/User/login application/json 44
+2023-09-18 17:04:17.968 +02:00 [INF] Executing endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 17:04:18.017 +02:00 [INF] Route matched with {action = "LoginUser", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginUser(NotesAndTagsApp.DTOs.LoginDto) on controller NotesAndTagsApp.Controllers.UserController (NotesAndTagsApp).
+2023-09-18 17:04:21.687 +02:00 [INF] Executed DbCommand (117ms) [Parameters=[@__ToLower_0='?' (Size = 30), @__hashedPassword_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Firstname], [u].[Lastname], [u].[Password], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0 AND [u].[Password] = @__hashedPassword_1
+2023-09-18 17:04:21.793 +02:00 [ERR] Internal exception: User not found!
+2023-09-18 17:04:21.806 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2023-09-18 17:04:21.812 +02:00 [INF] Executed action NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp) in 3789.3733ms
+2023-09-18 17:04:21.813 +02:00 [INF] Executed endpoint 'NotesAndTagsApp.Controllers.UserController.LoginUser (NotesAndTagsApp)'
+2023-09-18 17:04:21.838 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5002/api/User/login application/json 44 - 500 - text/plain;+charset=utf-8 4058.3811ms
